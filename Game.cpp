@@ -16,8 +16,8 @@
 
 Game::Game(Game* nextRoundGame)
   : m_pNextRoundGame(nextRoundGame),
-    m_pTeamOne(nullptr),
-    m_pTeamTwo(nullptr)
+    m_pTeamOne(0),
+    m_pTeamTwo(0)
 {
 	srand((unsigned int)time(0));
 }
@@ -27,10 +27,10 @@ Game::~Game() {
 
 void Game::AddTeam(Team * team)
 {
-	if(m_pTeamOne == nullptr) {
+	if(m_pTeamOne == 0) {
 		m_pTeamOne = team;
 	}
-	else if(m_pTeamTwo == nullptr) {
+	else if(m_pTeamTwo == 0) {
 		m_pTeamTwo = team;
 	}
 	else {
@@ -40,10 +40,10 @@ void Game::AddTeam(Team * team)
 
 void Game::Play(unsigned long roundId){
 	double team1OddsToAdvance = 0.0;
-	if(m_pTeamOne != nullptr) team1OddsToAdvance = m_pTeamOne->GetOddsToMakeRound(roundId);
+	if(m_pTeamOne != 0) team1OddsToAdvance = m_pTeamOne->GetOddsToMakeRound(roundId);
 	else return;
 	double team2OddsToAdvance = 0.0;
-	if(m_pTeamTwo != nullptr) team2OddsToAdvance = m_pTeamTwo->GetOddsToMakeRound(roundId);
+	if(m_pTeamTwo != 0) team2OddsToAdvance = m_pTeamTwo->GetOddsToMakeRound(roundId);
 	else return;
 
 	if(team1OddsToAdvance != 0.0 &&
@@ -83,11 +83,11 @@ void Game::Play(unsigned long roundId){
 void Game::Display(unsigned int gameId)
 {
     std::cout << "Game " << gameId << " : ";
-	if(m_pTeamOne != nullptr) {
+	if(m_pTeamOne != 0) {
 		m_pTeamOne->Display();
 	}
 	std::cout << " vs. ";
-	if(m_pTeamTwo != nullptr) {
+	if(m_pTeamTwo != 0) {
 		m_pTeamTwo->Display();
 	}
     std::cout << "\n";

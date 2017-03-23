@@ -14,21 +14,13 @@
 
 TourneyBracket::TourneyBracket() {
 
-	/*m_rounds = { new Round("Championship Winner"),
-               new Round("Championship Round"),
-               new Round("Final Four"),
-               new Round("Elite 8"),
-               new Round("Sweet 16"),
-               new Round("Round of 32"),
-               new Round("Round of 64") };*/
-
-	m_rounds = { new Round("Round of 64", 0),
-			new Round("Round of 32", 1),
-			new Round("Sweet 16", 2),
-			new Round("Elite 8", 3),
-			new Round("Final Four", 4),
-			new Round("Championship Round", 5),
-			new Round("Championship Winner", 6) };
+	m_rounds.push_back(new Round("Round of 64", 0));
+	m_rounds.push_back(new Round("Round of 32", 1));
+	m_rounds.push_back(new Round("Sweet 16", 2));
+	m_rounds.push_back(new Round("Elite 8", 3));
+	m_rounds.push_back(new Round("Final Four", 4));
+	m_rounds.push_back(new Round("Championship Round", 5));
+	m_rounds.push_back(new Round("Championship Winner", 6));
 
 	Round * championshipWinner = m_rounds.at(m_rounds.size()-1);
 	Game  * gameWinner = new ChampionshipGameWinner(0);
@@ -60,9 +52,9 @@ TourneyBracket::~TourneyBracket() {
 
 Round * TourneyBracket::GetRound(unsigned int roundNumber)
 {
-	Round * round = nullptr;
+	Round * round = 0;
 
-	if(!m_rounds.empty()) {
+	if(roundNumber < m_rounds.size()) {
 		round = m_rounds.at(roundNumber);
 	}
 	return round;
@@ -76,7 +68,7 @@ unsigned long int TourneyBracket::GetNumberOfRounds()
 void TourneyBracket::PlayRoundOf64()
 {
 	Round * round = GetRound(0);
-	if(round != nullptr)
+	if(round != 0)
 	{
 		round->Play();
 	}
@@ -85,7 +77,7 @@ void TourneyBracket::PlayRoundOf64()
 void TourneyBracket::PlayRoundOf32()
 {
 	Round * round = GetRound(1);
-	if(round != nullptr)
+	if(round != 0)
 	{
 		round->Play();
 	}
@@ -94,7 +86,7 @@ void TourneyBracket::PlayRoundOf32()
 void TourneyBracket::PlaySweet16()
 {
 	Round * round = GetRound(2);
-	if(round != nullptr)
+	if(round != 0)
 	{
 		round->Play();
 	}
@@ -103,7 +95,7 @@ void TourneyBracket::PlaySweet16()
 void TourneyBracket::PlayElite8()
 {
 	Round * round = GetRound(3);
-	if(round != nullptr)
+	if(round != 0)
 	{
 		round->Play();
 	}
@@ -112,7 +104,7 @@ void TourneyBracket::PlayElite8()
 void TourneyBracket::PlayFinalFour()
 {
 	Round * round = GetRound(4);
-	if(round != nullptr)
+	if(round != 0)
 	{
 		round->Play();
 	}
@@ -121,7 +113,7 @@ void TourneyBracket::PlayFinalFour()
 void TourneyBracket::PlayChampionship()
 {
 	Round * round = GetRound(5);
-	if(round != nullptr)
+	if(round != 0)
 	{
 		round->Play();
 	}

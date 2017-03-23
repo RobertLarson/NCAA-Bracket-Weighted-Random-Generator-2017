@@ -15,7 +15,7 @@ public:
 	Game(Game * nextRoundGame);
 	virtual ~Game();
 
-	virtual void AddTeam(Team * team) final;
+	virtual void AddTeam(Team * team);
 
 	virtual void Play(unsigned long roundId);
 

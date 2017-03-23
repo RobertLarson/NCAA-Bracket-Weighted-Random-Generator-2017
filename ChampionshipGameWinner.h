@@ -14,7 +14,7 @@ class ChampionshipGameWinner: public Game {
 public:
 	ChampionshipGameWinner(Game * nextRoundGame);
 	virtual ~ChampionshipGameWinner();
-	virtual void Play(unsigned long roundId) override;
+	virtual void Play(unsigned long roundId);
 	virtual void Display(unsigned int gameId);
 };
 

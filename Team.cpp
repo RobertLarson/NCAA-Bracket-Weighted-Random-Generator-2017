@@ -13,13 +13,22 @@ Team::Team(std::string name,
 		   unsigned int seed,
 		   unsigned int wins,
 		   unsigned int losses,
-		   std::vector<double> oddsToMakeNextRound)
+		   double oddsToMakeNextRound1,
+		   double oddsToMakeNextRound2,
+		   double oddsToMakeNextRound3,
+		   double oddsToMakeNextRound4,
+		   double oddsToMakeNextRound5,
+		   double oddsToMakeNextRound6)
 : m_name(name),
   m_seed(seed),
   m_wins(wins),
-  m_losses(losses),
-  m_oddsToMakeNextRound(oddsToMakeNextRound) {
-
+  m_losses(losses) {
+	m_oddsToMakeNextRound.push_back(oddsToMakeNextRound1);
+	m_oddsToMakeNextRound.push_back(oddsToMakeNextRound2);
+	m_oddsToMakeNextRound.push_back(oddsToMakeNextRound3);
+	m_oddsToMakeNextRound.push_back(oddsToMakeNextRound4);
+	m_oddsToMakeNextRound.push_back(oddsToMakeNextRound5);
+	m_oddsToMakeNextRound.push_back(oddsToMakeNextRound6);
 }
 
 Team::~Team() {
