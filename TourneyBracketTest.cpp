@@ -11,7 +11,7 @@
 int main()
 {
 	TourneyBracket * bracket =
-	    TourneyBracketFactory::GetInstance()->CreateTourneyBracket(2017);
+	    TourneyBracketFactory::GetInstance()->CreateTourneyBracket(2023);
 
     bracket->PlayRoundOf64();
     bracket->PlayRoundOf32();
