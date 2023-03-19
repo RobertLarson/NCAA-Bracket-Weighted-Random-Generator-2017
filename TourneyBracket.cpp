@@ -6,14 +6,14 @@
  */
 
 #include "TourneyBracket.h"
-#include "ChampionshipGameWinner.h"
-#include "Round.h"
 
 #include <cmath>
 #include <iostream>
 
-TourneyBracket::TourneyBracket() {
+#include "ChampionshipGameWinner.h"
+#include "Round.h"
 
+TourneyBracket::TourneyBracket() {
   m_rounds.push_back(new Round("Round of 64", 0));
   m_rounds.push_back(new Round("Round of 32", 1));
   m_rounds.push_back(new Round("Sweet 16", 2));
@@ -23,7 +23,7 @@ TourneyBracket::TourneyBracket() {
   m_rounds.push_back(new Round("Championship Winner", 6));
 
   Round *championshipWinner = m_rounds.at(m_rounds.size() - 1);
-  Game *gameWinner = new ChampionshipGameWinner(0);
+  Game * gameWinner         = new ChampionshipGameWinner(0);
 
   championshipWinner->AddGame(gameWinner);
 
@@ -34,11 +34,11 @@ TourneyBracket::TourneyBracket() {
          gameId <
          (unsigned long)pow(2.0, (double)(m_rounds.size() - roundId - 2));
          gameId++) {
-      Round *nextRound = m_rounds.at(roundId + 1);
-      unsigned long nextGameId = (unsigned long)floor((double)gameId / 2.0);
-      Game *nextRoundGame = nextRound->GetGame(nextGameId);
-      Game *currentGame = new Game(nextRoundGame);
-      Round *currentRound = m_rounds.at(roundId);
+      Round *       nextRound     = m_rounds.at(roundId + 1);
+      unsigned long nextGameId    = (unsigned long)floor((double)gameId / 2.0);
+      Game *        nextRoundGame = nextRound->GetGame(nextGameId);
+      Game *        currentGame   = new Game(nextRoundGame);
+      Round *       currentRound  = m_rounds.at(roundId);
 
       currentRound->AddGame(currentGame);
     }

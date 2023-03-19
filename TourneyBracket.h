@@ -13,7 +13,7 @@
 class Round;
 
 class TourneyBracket {
-public:
+ public:
   typedef std::vector<Round *> Rounds;
 
   TourneyBracket();
@@ -28,11 +28,11 @@ public:
 
   void Display();
 
-protected:
-  Round *GetRound(unsigned int roundNumber);
+ protected:
+  Round *           GetRound(unsigned int roundNumber);
   unsigned long int GetNumberOfRounds();
 
-private:
+ private:
   Rounds m_rounds;
 };
 

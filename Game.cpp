@@ -7,15 +7,18 @@
 
 #include "Game.h"
 
-#include "Team.h"
+#include <time.h>
 
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
-#include <time.h>
+
+#include "Team.h"
 
 Game::Game(Game *nextRoundGame)
-    : m_pNextRoundGame(nextRoundGame), m_pTeamOne(0), m_pTeamTwo(0) {
+    : m_pNextRoundGame(nextRoundGame),
+      m_pTeamOne(0),
+      m_pTeamTwo(0) {
   srand((unsigned int)time(0));
 }
 

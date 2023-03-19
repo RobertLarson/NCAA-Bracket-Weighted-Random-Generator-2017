@@ -13,7 +13,7 @@
 class Game;
 
 class Round {
-public:
+ public:
   Round(std::string name, unsigned long roundId);
   virtual ~Round();
 
@@ -27,9 +27,9 @@ public:
 
   void Display();
 
-private:
-  std::string m_name;
-  unsigned long m_roundId;
+ private:
+  std::string         m_name;
+  unsigned long       m_roundId;
   std::vector<Game *> m_games;
 };
 

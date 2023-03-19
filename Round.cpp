@@ -7,12 +7,13 @@
 
 #include "Round.h"
 
-#include "Game.h"
-
 #include <iostream>
 
+#include "Game.h"
+
 Round::Round(std::string name, unsigned long roundId)
-    : m_name(name), m_roundId(roundId) {}
+    : m_name(name),
+      m_roundId(roundId) {}
 
 Round::~Round() {}
 

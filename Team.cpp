@@ -14,7 +14,10 @@ Team::Team(std::string name, unsigned int seed, unsigned int wins,
            double oddsToMakeNextRound2, double oddsToMakeNextRound3,
            double oddsToMakeNextRound4, double oddsToMakeNextRound5,
            double oddsToMakeNextRound6)
-    : m_name(name), m_seed(seed), m_wins(wins), m_losses(losses) {
+    : m_name(name),
+      m_seed(seed),
+      m_wins(wins),
+      m_losses(losses) {
   m_oddsToMakeNextRound.push_back(oddsToMakeNextRound1);
   m_oddsToMakeNextRound.push_back(oddsToMakeNextRound2);
   m_oddsToMakeNextRound.push_back(oddsToMakeNextRound3);
@@ -35,8 +38,7 @@ double Team::GetOddsToMakeRound(unsigned long round) {
 
 void Team::Display() {
   std::string spacing;
-  if (GetSeed() < 10)
-    spacing.push_back(' ');
+  if (GetSeed() < 10) spacing.push_back(' ');
 
   std::cout << spacing << "#" << GetSeed() << " " << GetName() << " ("
             << GetWins() << "-" << GetLosses() << ")";

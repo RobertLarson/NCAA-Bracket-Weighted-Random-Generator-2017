@@ -11,7 +11,7 @@
 #include "Game.h"
 
 class ChampionshipGameWinner : public Game {
-public:
+ public:
   ChampionshipGameWinner(Game *nextRoundGame);
   virtual ~ChampionshipGameWinner();
   virtual void Play(unsigned long roundId);

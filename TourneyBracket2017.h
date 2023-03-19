@@ -11,7 +11,7 @@
 #include "TourneyBracket.h"
 
 class TourneyBracket2017 : public TourneyBracket {
-public:
+ public:
   TourneyBracket2017();
   virtual ~TourneyBracket2017();
 };

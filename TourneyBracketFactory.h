@@ -11,12 +11,12 @@
 class TourneyBracket;
 
 class TourneyBracketFactory {
-public:
+ public:
   static TourneyBracketFactory *GetInstance() { return m_instance; }
 
   TourneyBracket *CreateTourneyBracket(unsigned int year);
 
-private:
+ private:
   TourneyBracketFactory();
   virtual ~TourneyBracketFactory();
 

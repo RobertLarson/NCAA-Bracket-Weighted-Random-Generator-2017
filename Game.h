@@ -11,7 +11,7 @@
 class Team;
 
 class Game {
-public:
+ public:
   Game(Game *nextRoundGame);
   virtual ~Game();
 
@@ -21,7 +21,7 @@ public:
 
   virtual void Display(unsigned int gameId);
 
-protected:
+ protected:
   Game *m_pNextRoundGame;
   Team *m_pTeamOne;
   Team *m_pTeamTwo;

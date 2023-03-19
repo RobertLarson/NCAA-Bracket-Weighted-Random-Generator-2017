@@ -7,19 +7,18 @@
 
 #include "TourneyBracket2023.h"
 
-#include "Game.h"
-#include "Round.h"
-#include "Team.h"
-
 #include <iostream>
 #include <utility>
 #include <vector>
+
+#include "Game.h"
+#include "Round.h"
+#include "Team.h"
 
 TourneyBracket2023::TourneyBracket2023() {
   Round *firstRound = GetRound(0);
 
   if (firstRound && firstRound->GetNumberOfGames() == 32) {
-
     //		std::vector< std::pair<Team*, Team *> > teams = {
     std::pair<Team *, Team *> teams[32] = {
         std::make_pair(
