@@ -11,24 +11,19 @@
 #include "TourneyBracket2017.h"
 #include "TourneyBracket2023.h"
 
-TourneyBracketFactory * TourneyBracketFactory::m_instance = new TourneyBracketFactory();
+TourneyBracketFactory *TourneyBracketFactory::m_instance =
+    new TourneyBracketFactory();
 
-TourneyBracketFactory::TourneyBracketFactory() {
-}
+TourneyBracketFactory::TourneyBracketFactory() {}
 
-TourneyBracketFactory::~TourneyBracketFactory() {
-}
+TourneyBracketFactory::~TourneyBracketFactory() {}
 
-TourneyBracket * TourneyBracketFactory::CreateTourneyBracket(unsigned int year)
-{
-   if(year == 2017)
-   {
-	  return new TourneyBracket2017();
-   }
-   else if (year == 2023)
-   {
-	  return new TourneyBracket2023();
-   }
+TourneyBracket *TourneyBracketFactory::CreateTourneyBracket(unsigned int year) {
+  if (year == 2017) {
+    return new TourneyBracket2017();
+  } else if (year == 2023) {
+    return new TourneyBracket2023();
+  }
 
-   return 0;
+  return 0;
 }

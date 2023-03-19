@@ -12,8 +12,8 @@
 
 class TourneyBracket2017 : public TourneyBracket {
 public:
-	TourneyBracket2017();
-	virtual ~TourneyBracket2017();
+  TourneyBracket2017();
+  virtual ~TourneyBracket2017();
 };
 
 #endif /* TOURNEYBRACKET2017_H_ */

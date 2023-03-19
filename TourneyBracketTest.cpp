@@ -8,21 +8,20 @@
 #include "TourneyBracket.h"
 #include "TourneyBracketFactory.h"
 
-int main()
-{
-	TourneyBracket * bracket =
-	    TourneyBracketFactory::GetInstance()->CreateTourneyBracket(2023);
+int main() {
+  TourneyBracket *bracket =
+      TourneyBracketFactory::GetInstance()->CreateTourneyBracket(2023);
 
-    bracket->PlayRoundOf64();
-    bracket->PlayRoundOf32();
-    bracket->PlaySweet16();
-    bracket->PlayElite8();
-    bracket->PlayFinalFour();
-    bracket->PlayChampionship();
+  bracket->PlayRoundOf64();
+  bracket->PlayRoundOf32();
+  bracket->PlaySweet16();
+  bracket->PlayElite8();
+  bracket->PlayFinalFour();
+  bracket->PlayChampionship();
 
-	bracket->Display();
+  bracket->Display();
 
-	delete bracket;
+  delete bracket;
 
-    return 0;
+  return 0;
 }

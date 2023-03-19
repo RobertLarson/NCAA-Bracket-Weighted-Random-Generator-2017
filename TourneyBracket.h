@@ -14,26 +14,26 @@ class Round;
 
 class TourneyBracket {
 public:
-	typedef std::vector<Round *> Rounds;
+  typedef std::vector<Round *> Rounds;
 
-	TourneyBracket();
-	virtual ~TourneyBracket();
+  TourneyBracket();
+  virtual ~TourneyBracket();
 
-	void PlayRoundOf64();
-	void PlayRoundOf32();
-	void PlaySweet16();
-	void PlayElite8();
-	void PlayFinalFour();
-	void PlayChampionship();
+  void PlayRoundOf64();
+  void PlayRoundOf32();
+  void PlaySweet16();
+  void PlayElite8();
+  void PlayFinalFour();
+  void PlayChampionship();
 
-	void Display();
+  void Display();
 
 protected:
-	Round * GetRound(unsigned int roundNumber);
-	unsigned long int GetNumberOfRounds();
+  Round *GetRound(unsigned int roundNumber);
+  unsigned long int GetNumberOfRounds();
 
 private:
-	Rounds m_rounds;
+  Rounds m_rounds;
 };
 
 #endif /* TOURNEYBRACKET_H_ */

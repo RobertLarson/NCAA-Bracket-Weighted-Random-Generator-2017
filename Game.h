@@ -12,19 +12,19 @@ class Team;
 
 class Game {
 public:
-	Game(Game * nextRoundGame);
-	virtual ~Game();
+  Game(Game *nextRoundGame);
+  virtual ~Game();
 
-	virtual void AddTeam(Team * team);
+  virtual void AddTeam(Team *team);
 
-	virtual void Play(unsigned long roundId);
+  virtual void Play(unsigned long roundId);
 
-	virtual void Display(unsigned int gameId);
+  virtual void Display(unsigned int gameId);
 
 protected:
-	Game * m_pNextRoundGame;
-	Team * m_pTeamOne;
-	Team * m_pTeamTwo;
+  Game *m_pNextRoundGame;
+  Team *m_pTeamOne;
+  Team *m_pTeamTwo;
 };
 
 #endif /* GAME_H_ */

@@ -14,23 +14,23 @@ class Game;
 
 class Round {
 public:
-	Round(std::string name, unsigned long roundId);
-	virtual ~Round();
+  Round(std::string name, unsigned long roundId);
+  virtual ~Round();
 
-	void AddGame(Game * game);
+  void AddGame(Game *game);
 
-	Game * GetGame(unsigned long gameId);
+  Game *GetGame(unsigned long gameId);
 
-	unsigned long GetNumberOfGames();
+  unsigned long GetNumberOfGames();
 
-	void Play();
+  void Play();
 
-	void Display();
+  void Display();
 
 private:
-	std::string m_name;
-	unsigned long m_roundId;
-	std::vector<Game*> m_games;
+  std::string m_name;
+  unsigned long m_roundId;
+  std::vector<Game *> m_games;
 };
 
 #endif /* ROUND_H_ */
